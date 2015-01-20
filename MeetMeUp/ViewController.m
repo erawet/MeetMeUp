@@ -8,7 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSArray *meetMeUp;
 
 @end
 
@@ -16,12 +19,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSURL *url=[NSURL URLWithString:@"https://api.meetup.com/2/open_events.json?zip=60604&text=mobile&time=,1w&key=7c1d3d6555736235752b5e166d802a6c"];
+    NSURLRequest *request=[NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+       
+                               self.meetMeUp=[NSJSONSerialization JSONObjectWithData:data
+                                                                             options:NSJSONReadingAllowFragments
+                                                                               error:&connectionError];
+                               NSLog(@"%@",self.meetMeUp);
+ 
+                               
+                               [self.tableView reloadData];
+        
+    }];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell"];
+  
+    NSDictionary *meetUps=[self.meetMeUp valueForKey:@"results"];
+    
+    cell.textLabel.text=[meetUps objectForKey:@"title"];
+    
+    
+  //  NSArray *venue =[NSArray arrayWithObject:[meetUps objectForKey:@"venue"]];
+    
+  //  cell.detailTextLabel.text=[venue valueForKey:@"address_1"];
+    
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.meetMeUp.count;
 }
 
 @end
