@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *meetMeUp;
-
+@property NSArray *meet;
 @end
 
 @implementation ViewController
@@ -29,7 +29,7 @@
                                self.meetMeUp=[NSJSONSerialization JSONObjectWithData:data
                                                                              options:NSJSONReadingAllowFragments
                                                                                error:&connectionError];
-                               NSLog(@"%@",self.meetMeUp);
+                             //  NSLog(@"%@",self.meetMeUp);
  
                                
                                [self.tableView reloadData];
@@ -43,9 +43,11 @@
     
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell"];
   
-    NSDictionary *meetUps=[self.meetMeUp valueForKey:@"results"];
+    self.meet=[self.meetMeUp valueForKey:@"results"];
+    NSLog(@"%@",self.meet );
+    NSDictionary *dict=[self.meet objectAtIndex:indexPath.row];
     
-    cell.textLabel.text=[meetUps objectForKey:@"title"];
+    cell.textLabel.text=[dict objectForKey:@"name"];
     
     
   //  NSArray *venue =[NSArray arrayWithObject:[meetUps objectForKey:@"venue"]];
