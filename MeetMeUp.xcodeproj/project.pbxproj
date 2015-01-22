@@ -14,6 +14,9 @@
 		03378D2A1A6EEB6000DF031D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03378D291A6EEB6000DF031D /* Images.xcassets */; };
 		03378D2D1A6EEB6000DF031D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03378D2B1A6EEB6000DF031D /* LaunchScreen.xib */; };
 		03378D391A6EEB6100DF031D /* MeetMeUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03378D381A6EEB6100DF031D /* MeetMeUpTests.m */; };
+		03378D441A6F65FD00DF031D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03378D431A6F65FD00DF031D /* DetailViewController.m */; };
+		03378D471A6F7B5C00DF031D /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03378D461A6F7B5C00DF031D /* CommentViewController.m */; };
+		03CAA8C01A70BAC8003FF084 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CAA8BF1A70BAC8003FF084 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		03378D321A6EEB6100DF031D /* MeetMeUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeetMeUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03378D371A6EEB6100DF031D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03378D381A6EEB6100DF031D /* MeetMeUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeetMeUpTests.m; sourceTree = "<group>"; };
+		03378D421A6F65FD00DF031D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
+		03378D431A6F65FD00DF031D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
+		03378D451A6F7B5C00DF031D /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentViewController.h; path = ../CommentViewController.h; sourceTree = "<group>"; };
+		03378D461A6F7B5C00DF031D /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentViewController.m; path = ../CommentViewController.m; sourceTree = "<group>"; };
+		03CAA8BE1A70BAC8003FF084 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = ../WebViewController.h; sourceTree = "<group>"; };
+		03CAA8BF1A70BAC8003FF084 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = ../WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +94,12 @@
 				03378D211A6EEB6000DF031D /* AppDelegate.m */,
 				03378D231A6EEB6000DF031D /* ViewController.h */,
 				03378D241A6EEB6000DF031D /* ViewController.m */,
+				03378D421A6F65FD00DF031D /* DetailViewController.h */,
+				03378D431A6F65FD00DF031D /* DetailViewController.m */,
+				03378D451A6F7B5C00DF031D /* CommentViewController.h */,
+				03378D461A6F7B5C00DF031D /* CommentViewController.m */,
+				03CAA8BE1A70BAC8003FF084 /* WebViewController.h */,
+				03CAA8BF1A70BAC8003FF084 /* WebViewController.m */,
 				03378D261A6EEB6000DF031D /* Main.storyboard */,
 				03378D291A6EEB6000DF031D /* Images.xcassets */,
 				03378D2B1A6EEB6000DF031D /* LaunchScreen.xib */,
@@ -220,8 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				03378D251A6EEB6000DF031D /* ViewController.m in Sources */,
+				03CAA8C01A70BAC8003FF084 /* WebViewController.m in Sources */,
 				03378D221A6EEB6000DF031D /* AppDelegate.m in Sources */,
 				03378D1F1A6EEB6000DF031D /* main.m in Sources */,
+				03378D441A6F65FD00DF031D /* DetailViewController.m in Sources */,
+				03378D471A6F7B5C00DF031D /* CommentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +430,7 @@
 				03378D3E1A6EEB6100DF031D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03378D3F1A6EEB6100DF031D /* Build configuration list for PBXNativeTarget "MeetMeUpTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +439,7 @@
 				03378D411A6EEB6100DF031D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
